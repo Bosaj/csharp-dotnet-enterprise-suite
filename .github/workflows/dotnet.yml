@@ -1,0 +1,44 @@
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    env:
+      CI: true
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Restore
+        run: dotnet restore EniadCsharpDotnet.sln
+
+      - name: Build
+        run: dotnet build EniadCsharpDotnet.sln --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test EniadCsharpDotnet.sln --configuration Release --no-build --no-restore
+
+      - name: Publish application
+        run: dotnet publish CsharpProjects/EniadCsharpDotnet/EniadCsharpDotnet.csproj --configuration Release --no-restore --output ./artifacts/publish
+
+      - name: Upload release artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: EniadCsharpDotnet-release
+          path: artifacts/publish
