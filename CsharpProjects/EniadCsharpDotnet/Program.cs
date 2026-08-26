@@ -14,6 +14,9 @@ Console.WriteLine(largerValue);
 
 static bool TryReadValues(string[] args, out int firstValue, out int secondValue)
 {
+    firstValue = 0;
+    secondValue = 0;
+
     if (args.Length == 0)
     {
         firstValue = defaultFirstValue;
