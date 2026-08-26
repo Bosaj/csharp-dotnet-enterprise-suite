@@ -1,0 +1,29 @@
+name: Welcome contributors
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome first-time contributors
+        uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: >-
+            Thank you for opening your first issue in this academic C# and .NET
+            project. Please include the expected behavior, actual behavior, and
+            steps to reproduce the problem where applicable.
+          pr-message: >-
+            Thank you for your first contribution to this repository. Please make
+            sure the build and tests pass and that the pull request description
+            explains the change clearly.

@@ -1,0 +1,50 @@
+name: Manual validation
+
+on:
+  workflow_dispatch:
+    inputs:
+      configuration:
+        description: Build configuration
+        required: true
+        default: Release
+        type: choice
+        options:
+          - Debug
+          - Release
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+      CONFIGURATION: ${{ inputs.configuration }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Restore
+        run: dotnet restore EniadCsharpDotnet.sln
+
+      - name: Build
+        run: dotnet build EniadCsharpDotnet.sln --configuration "$CONFIGURATION" --no-restore
+
+      - name: Test
+        run: dotnet test EniadCsharpDotnet.sln --configuration "$CONFIGURATION" --no-build --no-restore
+
+      - name: Publish application
+        run: dotnet publish CsharpProjects/EniadCsharpDotnet/EniadCsharpDotnet.csproj --configuration "$CONFIGURATION" --no-restore --output ./artifacts/publish
+
+      - name: Upload published application
+        uses: actions/upload-artifact@v4
+        with:
+          name: EniadCsharpDotnet-${{ inputs.configuration }}
+          path: artifacts/publish
