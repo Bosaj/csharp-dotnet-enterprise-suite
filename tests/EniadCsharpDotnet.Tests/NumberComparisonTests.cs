@@ -7,25 +7,25 @@ namespace EniadCsharpDotnet.Tests;
 public sealed class NumberComparisonTests
 {
     [TestMethod]
-    public void GetLarger_ReturnsTheLargerPositiveValue()
+    public void GetLargerReturnsTheLargerPositiveValue()
     {
         Assert.AreEqual(600, NumberComparison.GetLarger(500, 600));
     }
 
     [TestMethod]
-    public void GetLarger_ReturnsTheFirstValueWhenItIsLarger()
+    public void GetLargerReturnsTheFirstValueWhenItIsLarger()
     {
         Assert.AreEqual(600, NumberComparison.GetLarger(600, 500));
     }
 
     [TestMethod]
-    public void GetLarger_ReturnsTheSameValueWhenValuesAreEqual()
+    public void GetLargerReturnsTheSameValueWhenValuesAreEqual()
     {
         Assert.AreEqual(42, NumberComparison.GetLarger(42, 42));
     }
 
     [TestMethod]
-    public void GetLarger_HandlesNegativeValues()
+    public void GetLargerHandlesNegativeValues()
     {
         Assert.AreEqual(-2, NumberComparison.GetLarger(-2, -8));
     }
