@@ -95,6 +95,12 @@ The comparison operation is isolated in `EniadCsharpDotnet.NumberComparison.GetL
 
 The repository enables nullable reference types and .NET analyzers. Builds run deterministically, and warnings are treated as errors in continuous-integration environments through `Directory.Build.props`.
 
+## GitHub Actions workflows
+
+The repository includes a set of workflows that match the project’s scale and academic purpose. The standard `.NET` workflow restores, builds, tests, publishes, and uploads a Release artifact on pushes and pull requests. `CodeQL` performs scheduled and pull-request security analysis for C#. `Manual validation` allows Bosaj to run a selected Debug or Release validation manually. `Welcome contributors` greets first-time issue and pull-request contributors. `Label pull requests` classifies changes as source, tests, documentation, or CI. `Stale items` keeps inactive issues and pull requests organized.
+
+The repository does not include cloud deployment workflows because this project is a console application rather than an Azure Web App, Azure Function, container service, or static website. Those deployment templates would add credentials and infrastructure without a real deployment target.
+
 ## Academic submission note
 
 This project should be evaluated primarily as a learning exercise in C# and .NET fundamentals. The additional repository structure, tests, input validation, and documentation are improvements intended to demonstrate maintainability and good engineering practice; they do not change the original learning objective.

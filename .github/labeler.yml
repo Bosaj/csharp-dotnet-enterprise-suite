@@ -1,0 +1,21 @@
+source:
+  - changed-files:
+      - any-glob-to-any-file: 'CsharpProjects/**'
+
+tests:
+  - changed-files:
+      - any-glob-to-any-file: 'tests/**'
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'README.md'
+          - 'docs/**'
+          - '*.md'
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/**'
+          - 'Directory.Build.props'
+          - '.editorconfig'

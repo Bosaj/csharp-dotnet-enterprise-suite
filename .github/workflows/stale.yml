@@ -1,0 +1,35 @@
+name: Stale items
+
+on:
+  schedule:
+    - cron: '15 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mark inactive issues and pull requests
+        uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-stale: 45
+          days-before-close: 14
+          stale-issue-message: >-
+            This issue has been inactive for 45 days. It will be closed in 14 days
+            if there is no further activity.
+          close-issue-message: >-
+            This issue was closed automatically because it remained inactive after
+            the stale notice. It can be reopened if the problem is still relevant.
+          stale-pr-message: >-
+            This pull request has been inactive for 45 days. It will be closed in
+            14 days if there is no further activity.
+          close-pr-message: >-
+            This pull request was closed automatically because it remained inactive
+            after the stale notice.
+          exempt-issue-labels: pinned,security
+          exempt-pr-labels: pinned,security
