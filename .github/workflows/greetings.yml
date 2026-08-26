@@ -5,6 +5,7 @@ on:
     types: [opened]
   pull_request:
     types: [opened]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -13,6 +14,7 @@ permissions:
 
 jobs:
   welcome:
+    if: github.event_name != 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: Welcome first-time contributors
@@ -27,3 +29,10 @@ jobs:
             Thank you for your first contribution to this repository. Please make
             sure the build and tests pass and that the pull request description
             explains the change clearly.
+
+  smoke-test:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify manual workflow path
+        run: echo "Welcome contributors workflow is configured and ready for issue and pull-request events."
