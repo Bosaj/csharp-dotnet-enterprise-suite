@@ -1,4 +1,5 @@
 using EniadCsharpDotnet;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace EniadCsharpDotnet.Tests;
 
