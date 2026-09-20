@@ -1,5 +1,9 @@
 # ENIAD C# and .NET Academic Project
 
+<p align="center">
+  <img src="assets/social_preview.png" alt="eniad-csharp-dotnet-academic-project Banner" width="100%">
+</p>
+
 A small, maintainable C#/.NET console application that compares two integer values and prints the larger one.
 
 ## Academic context
