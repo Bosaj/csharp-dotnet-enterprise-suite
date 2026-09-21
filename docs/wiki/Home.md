@@ -1,13 +1,13 @@
 # Welcome to the ENIAD C# & .NET Academic Project Wiki 🚀
 
-Welcome to the official documentation wiki for **`eniad-csharp-dotnet-academic-project`**.
+Welcome to the official documentation wiki for **`csharp-dotnet-enterprise-suite`**.
 
 ## 📌 Project Overview
 This repository hosts the academic C# and .NET application suite developed for the **Développement d'Applications .NET** module at **ENIAD**.
 
 - **Language**: C# 12 / .NET 8.0 SDK
 - **Architecture**: Modular Monolith & Clean Architecture
-- **Repository**: [`Bosaj/eniad-csharp-dotnet-academic-project`](https://github.com/Bosaj/eniad-csharp-dotnet-academic-project)
+- **Repository**: [`Bosaj/csharp-dotnet-enterprise-suite`](https://github.com/Bosaj/csharp-dotnet-enterprise-suite)
 
 ---
 

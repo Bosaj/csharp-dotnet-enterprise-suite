@@ -10,8 +10,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/Bosaj/eniad-csharp-dotnet-academic-project.git
-cd eniad-csharp-dotnet-academic-project
+git clone https://github.com/Bosaj/csharp-dotnet-enterprise-suite.git
+cd csharp-dotnet-enterprise-suite
 
 # Restore dependencies
 dotnet restore
