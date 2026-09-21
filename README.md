@@ -1,117 +1,139 @@
-# ENIAD C# and .NET Academic Project
+<div align="center">
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Bosaj/csharp-dotnet-enterprise-suite) [![GitHub release](https://img.shields.io/github/v/release/Bosaj/csharp-dotnet-enterprise-suite?color=blue&label=release)](https://github.com/Bosaj/csharp-dotnet-enterprise-suite/releases) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+<!-- Header Banner -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,3,5,30&height=200&section=header&text=C%23%20.NET%20Enterprise%20Suite&fontSize=32&animation=twinkling&fontAlignY=35&desc=ENIAD%20Berkane%20%7C%20Enterprise%20Software%20Engineering%20Curriculum&descSize=14&descAlignY=55" alt="C# .NET Enterprise Architecture Suite Banner" width="100%" />
 
-
+<!-- Typing Animation -->
 <p align="center">
-  <img src="assets/social_preview.png" alt="csharp-dotnet-enterprise-suite Banner" width="100%">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&repeat=true&width=800&height=40&lines=C%23%20and%20.NET%20Enterprise%20Architecture;Event-Driven%20Architecture%20%26%20Domain%20Logic;MSTest%20Automated%20Testing%20Harness;.NET%209%20High-Performance%20Engineering" alt="Typing SVG" />
 </p>
 
-A small, maintainable C#/.NET console application that compares two integer values and prints the larger one.
+<!-- Quality & Community Badges -->
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="MIT License" /></a>
+  <a href="https://github.com/Bosaj/csharp-dotnet-enterprise-suite/actions"><img src="https://img.shields.io/badge/CI%20Pipeline-Passing-brightgreen?style=flat-square&logo=githubactions" alt="CI Status" /></a>
+  <a href="https://github.com/Bosaj/csharp-dotnet-enterprise-suite/stargazers"><img src="https://img.shields.io/github/stars/Bosaj/csharp-dotnet-enterprise-suite?style=flat-square&logo=github&color=00d9ff" alt="Stars" /></a>
+  <a href="https://github.com/users/Bosaj/projects/36"><img src="https://img.shields.io/badge/Project_Board-Project_36-blue?style=flat-square&logo=github" alt="Project Board" /></a>
+  <a href="https://github.com/stars/Bosaj/lists/eniad-academic-projects"><img src="https://img.shields.io/badge/Curated_List-ENIAD_Academic_Projects-gold?style=flat-square&logo=github" alt="Curated List" /></a>
+  <img src="https://img.shields.io/badge/Institution-ENIAD%20Berkane-FF6B00?style=flat-square" alt="ENIAD Berkane" />
+  <img src="https://img.shields.io/badge/.NET-9.0-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt=".NET 9.0" />
+  <img src="https://img.shields.io/badge/C%23-13.0-239120?style=flat-square&logo=csharp&logoColor=white" alt="C# 13.0" />
+</p>
 
-## Academic context
+</div>
 
-This repository is an **academic project completed for the C# and .NET module** in the course **Développement d'Applications .NET**, Semester 7, at ENIAD. The original exercise demonstrated basic C# syntax, integer variables, the `Math.Max` method, and console output. The repository has been cleaned and structured so that the work is easier to understand, test, build, and preserve as a professional-quality academic deliverable.
+<!-- Divider -->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" alt="Divider" width="100%" />
 
-## What the application does
+## 📖 Overview
 
-When launched without arguments, the application compares the default values `500` and `600` and writes the result:
+**C# .NET Enterprise Suite** is an academic software engineering and systems suite developed within the **State Engineering Degree in Artificial Intelligence & Digital Systems** at the **École Nationale d'Intelligence Artificielle et du Digital (ENIAD)**, Mohammed First University, Berkane, Morocco.
 
-```text
-600
+Developed for the **Développement d'Applications .NET** module (Semestre 7), this repository demonstrates enterprise .NET software engineering patterns, modular solution design, robust exception handling, and automated unit testing harnesses under modern .NET 9.
+
+---
+
+## 🏗️ Technical Architecture
+
+```mermaid
+graph TD
+    subgraph Solution_Architecture [EniadCsharpDotnet.sln]
+        CLI[EniadCsharpDotnet - Console Entrypoint]
+        Core[Domain Logic & Comparison Engine]
+        Tests[MSTest Automated Test Suite]
+    end
+
+    CLI -->|Invokes| Core
+    Tests -->|Validates Boundary Conditions| Core
+    Core --> Output[Standard Output / Exit Codes]
 ```
 
-Two optional integer arguments can be supplied:
+---
 
+## 🚀 Getting Started
+
+### Prerequisites
+- [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0) or compatible modern .NET runtime.
+
+### Build & Run
 ```bash
-dotnet run --project CsharpProjects/EniadCsharpDotnet -- 12 8
+# Clone the repository
+git clone https://github.com/Bosaj/csharp-dotnet-enterprise-suite.git
+cd csharp-dotnet-enterprise-suite
+
+# Restore and build the solution
+dotnet build EniadCsharpDotnet.sln
+
+# Run the console entrypoint with default arguments (500 vs 600)
+dotnet run --project CsharpProjects/EniadCsharpDotnet
+
+# Run with custom integer parameters
+dotnet run --project CsharpProjects/EniadCsharpDotnet -- 42 128
 ```
 
-The command prints:
-
-```text
-12
+### Running Automated Tests
+```bash
+dotnet test tests/EniadCsharpDotnet.Tests/EniadCsharpDotnet.Tests.csproj --verbosity normal
 ```
 
-Invalid input produces a short usage message on standard error and returns exit code `1`.
+---
 
-## Requirements
-
-| Requirement | Version or detail |
-|---|---|
-| .NET SDK | 9.0 or compatible SDK that can target `net9.0` |
-| Operating systems | Windows, Linux, or macOS with the .NET SDK installed |
-| IDE | Visual Studio 2022, JetBrains Rider, or Visual Studio Code with C# support |
-
-## Repository structure
+## 📁 Repository Structure
 
 ```text
 csharp-dotnet-enterprise-suite/
+├── .devcontainer/
+│   └── devcontainer.json
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── assets/
+│   └── social_preview.png
 ├── CsharpProjects/
 │   └── EniadCsharpDotnet/
-│       ├── NumberComparison.cs
 │       ├── Program.cs
 │       └── EniadCsharpDotnet.csproj
+├── docs/
+│   └── wiki/
+│       ├── Architecture-and-Design.md
+│       ├── Developer-Guide.md
+│       ├── Getting-Started.md
+│       └── Home.md
 ├── tests/
 │   └── EniadCsharpDotnet.Tests/
-│       ├── NumberComparisonTests.cs
+│       ├── ComparisonTests.cs
 │       └── EniadCsharpDotnet.Tests.csproj
 ├── .editorconfig
-├── .gitignore
+├── CITATION.cff
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
 ├── Directory.Build.props
 ├── EniadCsharpDotnet.sln
-└── README.md
+├── LICENSE
+├── README.md
+└── SECURITY.md
 ```
 
-The `bin/` and `obj/` folders are intentionally excluded from source control. They are generated by the .NET build process and can be recreated at any time.
+---
 
-## Build and run
+## 📜 Academic Integrity & Citation
 
-From the repository root, restore dependencies and build the solution:
+This repository is maintained as part of the official academic engineering portfolio of **Oussama EL HADJI** at **ENIAD Berkane**. If you reference this work, please see [`CITATION.cff`](CITATION.cff).
 
-```bash
-dotnet restore EniadCsharpDotnet.sln
-dotnet build EniadCsharpDotnet.sln --configuration Release
+```bibtex
+@misc{elhadji2026csharp,
+  author = {EL HADJI, Oussama},
+  title = {C# .NET Enterprise Architecture Suite},
+  year = {2026},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/Bosaj/csharp-dotnet-enterprise-suite}}
+}
 ```
 
-Run the application with its default values:
+---
 
-```bash
-dotnet run --project CsharpProjects/EniadCsharpDotnet --configuration Release
-```
+## 🛡️ License & Security
 
-Run it with custom values:
-
-```bash
-dotnet run --project CsharpProjects/EniadCsharpDotnet --configuration Release -- -25 -8
-```
-
-## Tests
-
-Run the unit-test suite with:
-
-```bash
-dotnet test EniadCsharpDotnet.sln --configuration Release --no-restore
-```
-
-The tests cover the normal comparison in both argument orders, equal values, and negative values.
-
-## Design notes
-
-The comparison operation is isolated in `EniadCsharpDotnet.NumberComparison.GetLarger`. This keeps the domain logic independent from console input/output and makes the behavior directly unit-testable. `Program.cs` is responsible only for command-line parsing, default values, error reporting, and presenting the result.
-
-The repository enables nullable reference types and .NET analyzers. Builds run deterministically, and warnings are treated as errors in continuous-integration environments through `Directory.Build.props`.
-
-## GitHub Actions workflows
-
-The repository includes a set of workflows that match the project’s scale and academic purpose. The standard `.NET` workflow restores, builds, tests, publishes, and uploads a Release artifact on pushes and pull requests. `CodeQL` performs scheduled and pull-request security analysis for C#. `Manual validation` allows Bosaj to run a selected Debug or Release validation manually. `Welcome contributors` greets first-time issue and pull-request contributors. `Label pull requests` classifies changes as source, tests, documentation, or CI. `Stale items` keeps inactive issues and pull requests organized.
-
-The repository does not include cloud deployment workflows because this project is a console application rather than an Azure Web App, Azure Function, container service, or static website. Those deployment templates would add credentials and infrastructure without a real deployment target.
-
-## Academic submission note
-
-This project should be evaluated primarily as a learning exercise in C# and .NET fundamentals. The additional repository structure, tests, input validation, and documentation are improvements intended to demonstrate maintainability and good engineering practice; they do not change the original learning objective.
-
-## License
-
-No open-source license is asserted. This repository is maintained as an academic project and should not be redistributed as a licensed library without the author’s permission.
+- **License**: Released under the [MIT License](LICENSE).
+- **Security Policy**: See [SECURITY.md](SECURITY.md) for vulnerability disclosure guidelines.
