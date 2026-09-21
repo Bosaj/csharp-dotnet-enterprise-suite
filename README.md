@@ -1,10 +1,10 @@
 # ENIAD C# and .NET Academic Project
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Bosaj/eniad-csharp-dotnet-academic-project) [![GitHub release](https://img.shields.io/github/v/release/Bosaj/eniad-csharp-dotnet-academic-project?color=blue&label=release)](https://github.com/Bosaj/eniad-csharp-dotnet-academic-project/releases) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Bosaj/csharp-dotnet-enterprise-suite) [![GitHub release](https://img.shields.io/github/v/release/Bosaj/csharp-dotnet-enterprise-suite?color=blue&label=release)](https://github.com/Bosaj/csharp-dotnet-enterprise-suite/releases) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
 
 <p align="center">
-  <img src="assets/social_preview.png" alt="eniad-csharp-dotnet-academic-project Banner" width="100%">
+  <img src="assets/social_preview.png" alt="csharp-dotnet-enterprise-suite Banner" width="100%">
 </p>
 
 A small, maintainable C#/.NET console application that compares two integer values and prints the larger one.
@@ -46,7 +46,7 @@ Invalid input produces a short usage message on standard error and returns exit 
 ## Repository structure
 
 ```text
-eniad-csharp-dotnet-academic-project/
+csharp-dotnet-enterprise-suite/
 ├── CsharpProjects/
 │   └── EniadCsharpDotnet/
 │       ├── NumberComparison.cs
