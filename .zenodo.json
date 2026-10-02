@@ -1,0 +1,20 @@
+{
+  "title": "Csharp Dotnet Enterprise Suite: Enterprise .NET C# academic architecture and systems suite for event-driven software engineering.",
+  "description": "<p>Enterprise .NET C# academic architecture and systems suite for event-driven software engineering.</p><p>Authored and maintained by Bosaj (El Hadji Oussous).</p>",
+  "creators": [
+    {
+      "name": "Oussous, El Hadji",
+      "affiliation": "Software Engineer & AI Researcher",
+      "orcid": ""
+    }
+  ],
+  "access_right": "open",
+  "license": "GPL-3.0-or-later",
+  "upload_type": "software",
+  "keywords": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Software Engineering",
+    "Bosaj"
+  ]
+}
