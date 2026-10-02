@@ -9,6 +9,8 @@ on:
 
 permissions:
   contents: read
+  id-token: write
+  attestations: write
 
 jobs:
   build-and-test:
@@ -37,6 +39,11 @@ jobs:
 
       - name: Publish application
         run: dotnet publish CsharpProjects/EniadCsharpDotnet/EniadCsharpDotnet.csproj --configuration Release --no-restore --output ./artifacts/publish
+
+      - name: Generate Artifact Attestation
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: 'artifacts/publish'
 
       - name: Upload release artifact
         uses: actions/upload-artifact@v4
